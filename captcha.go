@@ -118,6 +118,7 @@ func (req *VerifyRequest) Verify(
 	}
 
 	// Parse response
+	resp = &VerifyResponse{}
 	err = json.NewDecoder(httpResp.Body).Decode(resp)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse verify response: %w", err)
